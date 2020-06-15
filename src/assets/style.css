@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+body{
+    font-family: 'Lato', sans-serif;
+}
+a{
+    cursor: pointer;
+}
+a:hover{
+    text-decoration: none;
+}
+
+.main-title{
+    margin-bottom: 0;
+}
+
+.main-title a{
+    color: black;
+}
+
+.login-info{
+    text-align: right;
+}
+
+.login-info a{
+    margin-left: 15px;
+}
+
+
+.menu ul {
+    margin: 0;
+    padding: 0;
+    border-radius: 4px;
+    background-color: #f3f3f3;
+}
+
+.menu ul li {
+    list-style: none;
+    padding: 5px
+}
+.menu ul li:hover {
+    background-color: lightgray;
+}
+
+.menu ul li a{
+    color: black;
+    display: block;
+}

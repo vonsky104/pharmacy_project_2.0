@@ -1,0 +1,19 @@
+.navigate-column {
+    width: 28%;
+    margin-right: 5px;
+    float: left;
+    padding-top:50px;
+    padding-bottom: 50px;
+}
+
+.map-column {
+    width: 70%;
+    margin-left: 5px;
+    float: right;
+    padding: 0 !important;
+}
+
+.map-column-nofloat {
+    float: none;
+    margin-top: 25px;
+}

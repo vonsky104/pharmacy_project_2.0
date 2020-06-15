@@ -1,0 +1,78 @@
+%section {
+  padding: 120px 0 60px 0;
+}
+
+.section {
+  &-welcome {
+    @extend %section;
+
+    &__h4 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    &__buttons-panel {
+      button:last-of-type {
+        //margin-left: 15px;
+      }
+    }
+
+    &__select-panel {
+      h5 {
+        color: #f1f1f1;
+      }
+      margin-top: 20px;
+      align-items: center;
+      justify-content: center;
+
+      label {
+        margin: 0;
+      }
+
+      select {
+        max-width: 300px;
+        margin-left: 25px;
+      }
+    }
+  }
+
+  &-sign {
+    @extend %section;
+  }
+
+  &-dashboard {
+    @extend %section;
+  }
+
+  &-form {
+    @extend %section;
+  }
+
+  &-pharmacies {
+    @extend %section;
+  }
+
+  &-products {
+    @extend %section;
+  }
+
+  &-users {
+    @extend %section;
+
+    &__h3 {
+      margin-bottom: 25px;
+      font-size: 26px;
+      color: #f1f1f1;
+    }
+  }
+
+  &-opinions {
+    @extend %section;
+
+    &__h3 {
+      margin-bottom: 25px;
+      font-size: 26px;
+      color: #f1f1f1;
+    }
+  }
+}

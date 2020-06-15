@@ -1,0 +1,54 @@
+.box {
+  &-observed {
+    @include card(1);
+    position: fixed;
+    max-height: 400px;
+    width: 200px;
+    background-color: #ffffff;
+    top: 0;
+    bottom: 0;
+    right: -205px;
+    padding: 10px 15px;
+    margin: auto;
+    display: flex;
+    overflow: visible;
+    flex-direction: column;
+    z-index: 1;
+    transition: all 0.3s ease;
+
+    &.show {
+      right: 0;
+    }
+
+    h2 {
+      font-size: 14px;
+      text-align: left;
+      color: #2274a5;
+    }
+
+    &-item {
+      display: flex;
+      margin-bottom: 10px;
+      font-size: 14px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid $color-primary;
+    }
+
+    &__show-btn {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 0;
+      left: -40px;
+      background: #444444;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

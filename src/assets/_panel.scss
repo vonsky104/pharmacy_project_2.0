@@ -1,0 +1,345 @@
+%panel {
+  background: $color-red;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  display: flex;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.panel {
+  @include card(1);
+  background-color: $color-red;
+  padding: 30px;
+  margin-bottom: 30px;
+  h4, label {
+    color: #fff;
+  }
+  &:last-of-type {
+    margin: 0;
+  }
+
+  &-dashboard {
+    transition: all 0.3s ease;
+    border-radius: 2px;
+    border: 1px solid darken($color-primary, 15%);
+    background: no-repeat center center;
+    background-size: cover;
+
+    &__h3 {
+      @include card(1);
+      font-size: 18px;
+      margin: 20px 0 0 20px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 6px 12px;
+      min-width: 130px;
+      display: inline-flex;
+      justify-content: center;
+      border-radius: 3px;
+      align-items: center;
+
+      span {
+        font-size: 14px;
+        padding-left: 5px;
+        color: $color-secondary;
+      }
+    }
+
+    &--large {
+      @extend .panel-dashboard;
+      height: 400px;
+    }
+
+    &--small {
+      @extend .panel-dashboard;
+      height: 190px;
+      margin-bottom: 20px;
+    }
+
+    &.products {
+      background-image: url('./event.jpg');
+    }
+
+    &.pharmacies {
+      background-image: url('./stadium.jpg');
+    }
+
+    &.users {
+      background-image: url('./users.jpg');
+    }
+
+    &:hover {
+      @include card(1);
+      cursor: pointer;
+    }
+  }
+
+  &-link {
+    @extend %panel;
+    height: 100px;
+    width: 75%;
+    align-items:center;
+    padding: 25px;
+    display: flex;
+    float: left;
+    border: 1px solid darken($color-primary, 10%);
+
+    &-icon {
+      height: 40px;
+      width: 40px;
+      margin-right: 20px;
+      img {
+        width: 100%;
+      }
+    }
+
+    &-name {
+      margin-right: 25px;
+      color: $color-secondary;
+      font-weight: 600;
+    }
+
+    &-address {
+      color: darken($color-primary, 70%);
+      padding-right: 25px;
+    }
+
+    &-wrapper {
+      display: block;
+      position: relative;
+    }
+
+    &:hover {
+      @include card(1);
+    }
+  }
+
+  &-opinion {
+    @extend %panel;
+    border: 1px solid darken($color-primary, 10%);
+
+    &-login {
+      color: $color-secondary;
+      font-weight: 600;
+      flex: 2;
+    }
+
+    &-name {
+      color: darken($color-primary, 70%);
+      flex: 2;
+    }
+
+    &-descr {
+      color: darken($color-primary, 70%);
+      flex: 2;
+    }
+
+    &-mark {
+      flex: 1;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-style: italic;
+    }
+  }
+
+  &-product {
+    @extend %panel;
+    align-items: center;
+
+    &-photo {
+      flex: 1;
+      max-width: 200px;
+    }
+
+    &-name {
+      flex: 1;
+      padding: 0 15px;
+      font-size: 14px;
+      display: flex;
+      justify-content: center;
+      color: $color-secondary;
+      font-weight: 600;
+    }
+
+    &-descr {
+      flex: 3;
+      padding: 0 15px;
+    }
+
+    &-navigate {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &:hover:not(.head) {
+      @include card(1);
+    }
+
+    &__label {
+      @include card(1);
+      padding-left: 30px;
+      position: relative;
+
+      input {
+        position: absolute;
+        visibility: hidden;
+        z-index: -10;
+      }
+
+      input:checked + .panel-product::before {
+        content: '\f00c';
+        font-family: FontAwesome;
+        color: $color-secondary;
+        border: 1px solid $color-secondary;
+      }
+
+      .panel-product {
+        padding: 15px 0;
+
+        &:hover {
+          box-shadow: none;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          font-family: FontAwesome;
+          width: 20px;
+          height: 20px;
+          border: 1px solid #cccccc;
+          border-radius: 3px;
+          top: 0;
+          left: -15px;
+          z-index: 10;
+          bottom: 0;
+          margin: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      .panel-product-descr {
+        font-size: 14px;
+        max-height: 150px;
+        overflow: auto;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &-close {
+    display: block;
+    font-family: FontAwesome;
+    position: absolute;
+    font-size: 18px;
+    top: 0px;
+    right: 8px;
+    color: #ff4444;
+    transition: all 0.3s ease;
+
+    &:hover {
+      cursor: pointer;
+      color: darken(#ff4444, 20%);
+    }
+  }
+
+  &-radio {
+    input {
+      position: absolute;
+      visibility: hidden;
+      z-index: -123;
+
+      &:checked + label {
+        background-color: $color-hover;
+        color: #ffffff;
+
+        &::before {
+          border: 3px solid $color-primary;
+        }
+
+        &::after {
+          background: $color-primary;
+        }
+      }
+    }
+
+    label {
+      position: relative;
+      border: 1px solid $color-secondary;
+      border-radius: 10px;
+      width: 150px;
+      padding: 8px 14px 8px 40px;
+      margin-right: 15px;
+      transition: all 0.3s ease;
+      font-size: 14px;
+      text-align: center;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        border: 3px solid $color-secondary;
+        left: 10px;
+        top: calc(50% - 10px);
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        background: transparent;
+        left: 15px;
+        top: calc(50% - 5px);
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &-user {
+    @extend %panel;
+    height: 100px;
+    align-items:center;
+    padding: 25px;
+    display: flex;
+    float: left;
+    border: 1px solid darken($color-primary, 10%);
+
+    &-name {
+      color: $color-secondary;
+      font-weight: 600;
+      flex: 1;
+      display: inline-block;
+    }
+
+    &-options {
+      color: darken($color-primary, 70%);
+      flex: 1;
+    }
+
+    &-icon {
+      height: 40px;
+      width: 40px;
+      margin-right: 20px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
